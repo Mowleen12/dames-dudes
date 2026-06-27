@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dames & Dudes</title>
+    <script>
+      (function() {
+        try {
+          var originalFetch = window.fetch || (typeof globalThis !== 'undefined' && globalThis.fetch);
+          if (originalFetch) {
+            try {
+              Object.defineProperty(window, 'fetch', {
+                value: originalFetch,
+                writable: true,
+                configurable: true,
+                enumerable: true
+              });
+            } catch (err1) {
+              if (typeof Window !== 'undefined' && Window.prototype) {
+                try {
+                  Object.defineProperty(Window.prototype, 'fetch', {
+                    value: originalFetch,
+                    writable: true,
+                    configurable: true,
+                    enumerable: true
+                  });
+                } catch (err2) {}
+              }
+            }
+          }
+        } catch (e) {
+          console.warn('Failed to define writable fetch:', e);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

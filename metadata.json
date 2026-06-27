@@ -1,0 +1,6 @@
+{
+  "name": "Dames & Dudes Unisex Salon",
+  "description": "Luxury premium salon website for Dames & Dudes Unisex Salon in Mayur Vihar, Delhi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
